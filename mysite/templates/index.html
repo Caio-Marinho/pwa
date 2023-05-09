@@ -14,8 +14,10 @@
         <script src="../static/js/pwabuilder-sw.js"></script>
         <link rel="manifest" href="../static/js/manifest.json">
         <link rel="manifest" href="../static/js/icons.json">
+        <link rel="shortcut icon" href="../static/image/ios/16.png">
+    <link rel="apple-touch-icon" href="../static/image/ios/180.png">
     </head>
-    <body onload="atualizarConteudo()">
+    <body onload="atualizarConteudo()" onload="registerServiceWorker()">
         <div class="navbar">
             <div class="blinking">Atividade Mobile</div>
         </div>
