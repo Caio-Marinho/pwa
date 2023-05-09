@@ -1,17 +1,18 @@
 function atualizarConteudo(){
     const xhr = new XMLHttpRequest();
-    xhr.open('GET','https://localhost:5000',true);
+    xhr.open('GET','/',true);
 
     xhr.onload = function(){
         if(xhr.status >=200 && xhr.status < 400){
-            const data = xhr.responseText;
-            document.body.innerHTML = data;
+            const novoConteudo = xhr.responseText;
+            const conteudoAtual = document.body.innerHTML;
+            if(novoConteudo !== conteudoAtual) {
+                document.body.innerHTML = novoConteudo;
+            }
         }
     };
 
     xhr.send();
 }
 
-atualizarConteudo();
-
-setInterval(atualizarConteudo,5000)
+setInterval(atualizarConteudo, 5000); // atualizar a cada 10 segundos
