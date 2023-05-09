@@ -26,7 +26,7 @@ self.addEventListener('activate', event => {
       .then(cacheNames => {
         return Promise.all(
           cacheNames.filter(cacheName => {
-            return cacheName.startsWith('conversão-cache-') &&
+            return cacheName.startsWith('Conversão-cache-') &&
                    cacheName !== CACHE_NAME;
           }).map(cacheName => {
             return caches.delete(cacheName);
