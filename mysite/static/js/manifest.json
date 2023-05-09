@@ -54,5 +54,8 @@
   }
 ],
   "shortcuts": [],
-  "lang": "pt"
+  "lang": "pt",
+  "serviceworker": {
+    "src": "../static/js/service-work.js"
+  }
 }
