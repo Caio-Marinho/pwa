@@ -3,7 +3,7 @@ const CACHE_NAME = 'Conversão-cache-v1';
 const urlsToCache = [
   '/',
   'index.html',
-  '/css/style.css'
+  'static/css/style.css'
 ];
 
 self.addEventListener('install', event => {
