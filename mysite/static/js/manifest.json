@@ -5,6 +5,7 @@
   "display": "standalone",
   "name": "Conversor",
   "orientation": "any",
+  "scope": "/",
   "short_name": "Conversor",
   "start_url": "/",
   "theme_color": "#d01e1e",
