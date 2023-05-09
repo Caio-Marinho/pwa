@@ -1,16 +1,16 @@
 from flask import Flask, request, render_template, redirect, url_for, flash, get_flashed_messages, session
+from flask_sslify import SSLify
 import requests
 import secrets
 from cachetools import TTLCache
 from concurrent.futures import ThreadPoolExecutor
 
 
-
 port = 5000
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-
+sslify = SSLify(app)
 cache = TTLCache(maxsize=1, ttl=3600) # Cache para armazenar a lista de moedas
 executor = ThreadPoolExecutor(max_workers=10) # Executor para executar as requisições para a API de países em paralelo
 
