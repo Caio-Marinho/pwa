@@ -1,4 +1,4 @@
-const CACHE_NAME = 'supernutri-cache-v1';
+const CACHE_NAME = 'Conversão-cache-v1';
 
 const urlsToCache = [
   '/',
