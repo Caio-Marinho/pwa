@@ -1,10 +1,21 @@
 function exibir() {
-        fetch('/conversao') // faz uma requisição GET para o servidor
-          .then(response => response.json()) // converte a resposta para JSON
-          .then(data => { // atualiza o valor na página
-            var conversao = data.conversao;
-            document.getElementById('conversao').innerHTML = conversao;
-          })
-          .catch(error => console.error(error));
+  var valor = $('#input_valor').val();
+
+  $.ajax({
+    url: '/conversao',
+    type: 'POST',
+    data: {
+      'valor': valor
+    },
+    success: function(data) {
+      if ('resultado' in data) {
+        $('#exibir').text('O valor é: ' + data.resultado);
+      } else {
+        $('#exibir').text(data.erro);
       }
-exibir(); // chama a função ao carregar a página
+    },
+    error: function() {
+      alert('Ocorreu um erro ao enviar a solicitação.');
+    }
+  });
+}

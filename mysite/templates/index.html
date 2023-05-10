@@ -15,7 +15,7 @@
         <link rel="shortcut icon" href="../static/js/image/ios/16.png">
     <link rel="apple-touch-icon" href="../static/js/image/ios/180.png">
     </head>
-    <body onload="atualizarConteudo(); registerServiceWorker()">
+    <body onload="atualizarConteudo(); registerServiceWorker();exibir()">
         <div class="navbar">
             <div class="blinking">Atividade Mobile</div>
         </div>
@@ -25,7 +25,7 @@
             <label>No convertida é a moeda que deseja para ao qual seja convertida.<br></label>
             <form action="/conversao" method='POST'>
                 <div class="input">
-                <input  class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
+                <input  id ="input_valor" class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
                 </div>
                 <div class="output">
                     O valor é:{{conversao}}
