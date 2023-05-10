@@ -7,7 +7,7 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "Conversor",
-  "start_url": "template/index.html",
+  "start_url": "../template/index.html",
   "theme_color": "#d01e1e",
   "categories": [],
   "screenshots": [],
