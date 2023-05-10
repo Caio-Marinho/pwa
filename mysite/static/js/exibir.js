@@ -7,3 +7,4 @@ function exibir() {
       })
       .catch(error => console.error(error));
   }
+exibir();
