@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, flash, get_flashed_messages, session
+from flask import Flask, request, render_template, redirect, url_for, flash, get_flashed_messages, session,jsonify
 from flask_sslify import SSLify
 import requests
 import secrets
