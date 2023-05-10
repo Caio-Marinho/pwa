@@ -5,7 +5,6 @@ const CACHE_NAME = 'conversao-cache-v1';
 const urlsToCache = [
   '/',
   'index.html',
-  '/conversao',
   '/static/css/style.css',
   '/static/bootstrap/css/bootstrap-grid.min.css',
   '/static/bootstrap/js/bootstrap.bundle.min.js',
