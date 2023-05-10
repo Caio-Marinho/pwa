@@ -9,7 +9,7 @@ function exibir() {
     },
     success: function(data) {
       if ('resultado' in data) {
-        $('#exibir').text('O valor é: ' + data.resultado);
+        $('#exibir').text('O valor é: ' + data.valor);
       } else {
         $('#exibir').text(data.erro);
       }
