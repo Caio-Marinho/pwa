@@ -9,7 +9,7 @@ const urlsToCache = [
   '/static/bootstrap/css/bootstrap-grid.min.css',
   '/static/bootstrap/js/bootstrap.bundle.min.js',
   '/static/js/atualizar.js',
-  'app_mobile.py'
+  '/app_mobile.py'
 ];
 
 self.addEventListener('install', event => {
