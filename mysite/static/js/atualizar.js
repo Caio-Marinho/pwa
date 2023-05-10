@@ -8,7 +8,7 @@ function atualizarConteudo(){
             const conteudoAtual = document.body.innerHTML;
             if(novoConteudo !== conteudoAtual) {
                 document.body.innerHTML = novoConteudo;
-                setInterval(atualizarConteudo, 5000); // atualizar a cada 10 segundos
+                atualizarConteudo();
             }
         }
     };
