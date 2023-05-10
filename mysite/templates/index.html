@@ -8,7 +8,6 @@
         <title>Atividade Mobile</title>
         <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-grid.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
-        <script type="text/javascript" src="../static/js/exibir.js"></script>
         <link rel="stylesheet" href="../static/bootstrap/js/bootstrap.bundle.min.js">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script type="text/javascript" src="../static/js/atualizar.js"></script>
@@ -16,7 +15,7 @@
         <link rel="shortcut icon" href="../static/js/image/ios/16.png">
     <link rel="apple-touch-icon" href="../static/js/image/ios/180.png">
     </head>
-    <body onload="exibir();registerServiceWorker()">
+    <body onload="atualizarConteudo(); registerServiceWorker()">
         <div class="navbar">
             <div class="blinking">Atividade Mobile</div>
         </div>
@@ -26,10 +25,10 @@
             <label>No convertida é a moeda que deseja para ao qual seja convertida.<br></label>
             <form action="/conversao" method='POST'>
                 <div class="input">
-                <input  id ="input_valor" class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
+                <input  class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
                 </div>
-                <div id="output_valor class="output">
-                    O valor é:
+                <div class="output">
+                    O valor é:{{conversao}}
                 </div>
                 <select class="form-select" name="moeda">
                     <option>CONVERSOR</option>
