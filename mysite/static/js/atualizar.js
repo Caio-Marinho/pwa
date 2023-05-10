@@ -1,17 +1,18 @@
-function atualizarConteudo(){
+function atualizarConteudo() {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET','/',true);
+    xhr.open('GET', '/', true);
 
-    xhr.onload = function(){
-        if(xhr.status >=200 && xhr.status < 400){
-            const novoConteudo = xhr.responseText;
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            const novoConteudo = this.responseText;
             const conteudoAtual = document.body.innerHTML;
-            if(novoConteudo !== conteudoAtual) {
+            if (novoConteudo !== conteudoAtual) {
                 document.body.innerHTML = novoConteudo;
-                atualizarConteudo();
             }
         }
     };
 
     xhr.send();
 }
+
+atualizarConteudo();
