@@ -70,7 +70,7 @@ def contacao():
                 conversao = float(contacao)*float(valor)
                 return {'valor':f"{conversao:.2f}"}
             flash(f"{conversao:.2f}")
-            return redirect(url_for("index")){'valor':f"{conversao:.2f}"}
+            return redirect(url_for("index"))
         except:
             return redirect(url_for('index'))
 
