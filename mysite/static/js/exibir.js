@@ -8,11 +8,9 @@ function exibir() {
       'valor': valor
     },
     success: function(data) {
-      if ('resultado' in data) {
+      if ('valor' in data) {
         $('#exibir').text('O valor é: ' + data.valor);
-      } else {
-        $('#exibir').text(data.erro);
-      }
+      } 
     },
     error: function() {
       alert('Ocorreu um erro ao enviar a solicitação.');
