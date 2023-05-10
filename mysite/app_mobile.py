@@ -68,7 +68,7 @@ def contacao():
             elif contacao > contacao2:
                 conversao = float(contacao)*float(valor)
             flash(f"{conversao:.2f}")
-            return redirect(url_for("index"))
+            return redirect(url_for("index")),{'valor':f"{conversao:.2f}"}
         except:
             return redirect(url_for('index'))
 

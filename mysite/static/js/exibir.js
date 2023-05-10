@@ -2,8 +2,8 @@ function exibir() {
     fetch('/conversao')
       .then(response => response.json())
       .then(data => {
-        const dataDiv = document.getElementById('data');
-        dataDiv.innerHTML = `Nome: ${data.name}, Idade: ${data.age}`;
+        const dataDiv = document.getElementById('exibir');
+        dataDiv.innerHTML = `${exibir.valor}`;
       })
       .catch(error => console.error(error));
   }
