@@ -13,7 +13,7 @@
   "screenshots": [],
   "icons": [{
     "src": "image/ios/128.png",
-    "sizes": "src",
+    "sizes": "128x128",
     "type": "image/png"
   },
   {
