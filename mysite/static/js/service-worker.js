@@ -5,7 +5,10 @@ const CACHE_NAME = 'conversao-cache-v1';
 const urlsToCache = [
   '/',
   'index.html',
-  '/static/css/style.css'
+  '/static/css/style.css',
+  'static/bootstrap/css/bootstrap-grid.min.css',
+  'static/bootstrap/js/bootstrap.bundle.min.js',
+  'static/js/atualizar.js'
 ];
 
 self.addEventListener('install', event => {
