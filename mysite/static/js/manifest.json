@@ -12,43 +12,43 @@
   "categories": [],
   "screenshots": [],
   "icons": [{
-    "src": "static/image/ios/128.png",
+    "src": "image/ios/128.png",
     "sizes": "128x128",
     "type": "image/png"
   },
   {
-    "src": "static/image/ios/144.png",
+    "src": "image/ios/144.png",
     "sizes": "144x144",
     "type": "image/png"
   },
   {
-    "src": "static/image/ios/152.png",
+    "src": "image/ios/152.png",
     "sizes": "152x152",
     "type": "image/png"
   },
   {
-    "src": "static/image/ios/167.png",
+    "src": "image/ios/167.png",
     "sizes": "167x167",
     "type": "image/png"
   },
   {
-    "src": "static/image/ios/180.png",
+    "src": "image/ios/180.png",
     "sizes": "180x180",
     "type": "image/png"
   },
   {
-    "src": "static/image/ios/196.png",
+    "src": "image/ios/196.png",
     "sizes": "196x196",
     "type": "image/png",
     "purpose": "any maskable"
   },
   {
-    "src": "static/image/ios/256.png",
+    "src": "image/ios/256.png",
     "sizes": "256x256",
     "type": "image/png"
   },
   {
-    "src": "static/image/ios/512.png",
+    "src": "image/ios/512.png",
     "sizes": "512x512",
     "type": "image/png"
   }
