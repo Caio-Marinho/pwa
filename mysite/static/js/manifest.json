@@ -7,13 +7,13 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "Conversor",
-  "start_url": "../template/index.html",
+  "start_url": "index.html",
   "theme_color": "#d01e1e",
   "categories": [],
   "screenshots": [],
   "icons": [{
     "src": "image/ios/128.png",
-    "sizes": "128x128",
+    "sizes": "src",
     "type": "image/png"
   },
   {
