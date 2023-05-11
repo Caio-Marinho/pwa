@@ -6,7 +6,7 @@ function realizarConversao() {
       console.log(valor);
     })
     .catch(error => console.error(error));
-}
+
 
 document.querySelector('#form-conversao').addEventListener('submit', function(event) {
   event.preventDefault();
@@ -23,3 +23,4 @@ document.querySelector('#form-conversao').addEventListener('submit', function(ev
     })
     .catch(error => console.error(error));
 });
+}
