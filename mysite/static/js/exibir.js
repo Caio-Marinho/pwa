@@ -1,5 +1,5 @@
   // Adiciona um listener para o submit do form
-  document.getElementById("form-conversao").addEventListener("submit", function(event) {
+  document.getElementById("form-conversao").addEventListener("click", function(event) {
     event.preventDefault(); // Previne o comportamento padrão do form (submit e refresh da página)
     var form = new FormData(event.target); // Obtém os dados do form
     var xhr = new XMLHttpRequest(); // Cria uma nova requisição AJAX
