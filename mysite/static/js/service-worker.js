@@ -3,11 +3,11 @@ const CACHE_NAME = 'conversao-cache-v1';
 
 const urlsToCache = [
   '/',
-  '/templates/index.html',
-  '/static/css/style.css',
-  '/static/bootstrap/css/bootstrap-grid.min.css',
-  '/static/bootstrap/js/bootstrap.bundle.min.js',
-  '/static/js/atualiza.js'
+  '../templates/index.html',
+  '../static/css/style.css',
+  '../static/bootstrap/css/bootstrap-grid.min.css',
+  '../static/bootstrap/js/bootstrap.bundle.min.js',
+  '../static/js/atualiza.js'
 ];
 
 self.addEventListener('install', event => {
