@@ -29,7 +29,7 @@ function realizarConversao() {
     // Faz outra requisição AJAX para atualizar o valor armazenado em cache
     atualizarValorEmCache();
     }
-    });
+    });console.log('oi');
     });
     }
     
