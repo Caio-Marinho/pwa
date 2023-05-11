@@ -18,31 +18,41 @@ function atualizarConteudo() {
 atualizarConteudo();
 
 function realizarConversao() {
-    $('#form-conversao').submit(function(event) {
-    event.preventDefault();
-    $.ajax({
-    url: '/conversao',
-    type: 'POST',
-    data: $('#form-conversao').serialize(),
-    success: function(response) {
-    $('#conversao').text(response.valor);
-    // Faz outra requisição AJAX para atualizar o valor armazenado em cache
-    atualizarValorEmCache();
-    }
+    var form = document.querySelector('#form-conversao');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/conversao');
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          document.querySelector('#conversao').textContent = response.valor;
+          // Faz outra requisição AJAX para atualizar o valor armazenado em cache
+          atualizarValorEmCache();
+        } else {
+          console.log('Erro na requisição. Status do erro: ' + xhr.status);
+        }
+      };
+      xhr.send(new FormData(form));
     });
-    });
-    }
-    
-    function atualizarValorEmCache() {
-    $.ajax({
-    url: '/conversao_valor',
-    type: 'GET',
-    success: function(response) {
-    console.log(response.valor);
-    }
-    });
-    }
-    
-    $(document).ready(function() {
+  }
+  
+  function atualizarValorEmCache() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/conversao_valor');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        console.log(response.valor);
+      } else {
+        console.log('Erro na requisição. Status do erro: ' + xhr.status);
+      }
+    };
+    xhr.send();
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
     realizarConversao();
-    });
+  });
+  
