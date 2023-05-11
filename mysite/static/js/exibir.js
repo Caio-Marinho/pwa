@@ -9,6 +9,7 @@ $(document).ready(function() {
           dataType: 'json', // Especifica que o tipo de dados da resposta é JSON
           success: function(response) {
             console.log(response);
+            console.log(url);
               $('#conversao').text(response.valor); // Atualiza o elemento HTML com o valor convertido
           },
           error: function(error) {
