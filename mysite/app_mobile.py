@@ -44,6 +44,11 @@ def index():
         return render_template("index.html",  moedas=nome)
     return render_template("index.html", conversao=message, moedas=nome)
 
+@app.route('/conversao_valor', methods=['GET'])
+def conversao_valor():
+    valor = cache.get('conversao')
+    if valor is not None:
+        return jsonify({'valor': valor})
 
 @app.route('/conversao', methods=['GET', 'POST'])
 def contacao():
@@ -69,8 +74,8 @@ def contacao():
             elif contacao > contacao2:
                 conversao = float(contacao)*float(valor)
                 return jsonify({'valor':f"{conversao:.2f}"})
-            flash(f"{conversao:.2f}")
-            return redirect(url_for("index"))
+            cache['conversao'] = conversao # Armazena o valor da conversão em cache
+            return jsonify({'valor': conversao}) # Retorna o valor da conversão por meio de uma requisição AJAX
         except:
             return redirect(url_for('index'))
 
