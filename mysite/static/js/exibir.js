@@ -24,3 +24,4 @@ document.querySelector('#form-conversao').addEventListener('submit', function(ev
     .catch(error => console.error(error));
 });
 }
+realizarConversao();
