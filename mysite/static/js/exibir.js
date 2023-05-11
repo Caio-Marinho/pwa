@@ -7,7 +7,7 @@
     xhr.onload = function() {
         if (xhr.status === 200) { // Verifica se a requisição foi bem sucedida
             var response = JSON.parse(xhr.responseText); // Converte a resposta para JSON
-            document.getElementById("resultado").textContent = response.valor; // Atualiza o elemento HTML com o valor convertido
+            document.getElementById("conversao").textContent = response.valor; // Atualiza o elemento HTML com o valor convertido
         } else {
             console.log('Erro ao realizar a requisição.');
         }
