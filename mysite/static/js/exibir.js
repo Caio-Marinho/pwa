@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("meuBotao").addEventListener("click", function() {
   fetch('/conversao')
     .then(function(response) {
@@ -13,4 +14,5 @@ document.getElementById("meuBotao").addEventListener("click", function() {
     .catch(function(error) {
       console.log(error);
     });
+  });
 });
