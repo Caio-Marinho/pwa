@@ -71,12 +71,12 @@ def contacao():
             contacao2 = cota2
             if contacao < contacao2:
                 conversao = float(valor) / float(contacao2)
-                return render_template('index.html',conversao=conversao),jsonify({'valor':f"{conversao:.2f}"})
+                return render_template('index.html',conversao=conversao)
             elif contacao > contacao2:
                 conversao = float(contacao)*float(valor)
-                return render_template('index.html',conversao=conversao),jsonify({'valor':f"{conversao:.2f}"})
+                return render_template('index.html',conversao=conversao)
             cache['conversao'] = conversao # Armazena o valor da conversão em cache
-            return render_template('index.html',conversao=conversao),jsonify({'valor':f"{conversao:.2f}"}) # Retorna o valor da conversão por meio de uma requisição AJAX
+            return render_template('index.html',conversao=conversao) # Retorna o valor da conversão por meio de uma requisição AJAX
         except:
             return redirect(url_for('index'))
 
