@@ -12,6 +12,7 @@ $(document).ready(function() {
               $('#conversao').text(response.valor); // Atualiza o elemento HTML com o valor convertido
           },
           error: function(error) {
+            console.log('ola');
               console.log(error);
           }
       });
