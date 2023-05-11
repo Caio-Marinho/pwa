@@ -16,7 +16,7 @@ $('#form-conversao').submit(function(event) {
     data: $('#form-conversao').serialize(),
     success: function(response) {
       $('#conversao').text(response.valor);
-      atualizarConteudo();
+      realizarConversao();
     }
   });
 });
