@@ -49,6 +49,7 @@ def conversao_valor():
     valor = cache.get('conversao')
     if valor is not None:
         return jsonify({'valor': valor})
+    return jsonify({'valor': ''})
 
 @app.route('/conversao', methods=['GET', 'POST'])
 def contacao():
