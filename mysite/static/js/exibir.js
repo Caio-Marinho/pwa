@@ -8,6 +8,7 @@ $(document).ready(function() {
           data: form,
           dataType: 'json', // Especifica que o tipo de dados da resposta é JSON
           success: function(response) {
+            console.log(response);
               $('#conversao').text(response.valor); // Atualiza o elemento HTML com o valor convertido
           },
           error: function(error) {
