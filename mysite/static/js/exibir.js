@@ -1,20 +1,16 @@
-$(document).ready(function() {
-  $('#form-conversao').submit(function(event) {
-      event.preventDefault(); // Previne o comportamento padrão do form (submit e refresh da página)
-      var form = $(this).serialize(); // Obtém os dados do form como uma string serializada
-      $.ajax({
-          url: '/conversao',
-          type: 'POST',
-          data: form,
-          dataType: 'json', // Especifica que o tipo de dados da resposta é JSON
-          success: function(response) {
-            console.log(response);
-            console.log(url);
-              $('#conversao').text(response.valor); // Atualiza o elemento HTML com o valor convertido
-          },
-          error: function(error) {
-              console.log(error);
-          }
-      });
-  });
+document.getElementById("meuBotao").addEventListener("click", function() {
+  fetch('/conversao')
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Erro ao obter dados');
+      }
+    })
+    .then(function(data) {
+      document.getElementById("conversao").innerHTML = data.valor;
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 });
