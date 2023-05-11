@@ -7,7 +7,7 @@ function exibir() {
             type: 'POST',
             data: $('#form-conversao').serialize(),
             success: function(response) {
-                console.log('oi');
+                console.log(response);
                 $('#conversao').html(response);
             },
             error: function(error) {
