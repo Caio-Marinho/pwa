@@ -1,4 +1,4 @@
-function atualizarConteudo() {
+function realizarConversao() {
   fetch('/conversao_valor')
     .then(response => response.json())
     .then(data => {
@@ -19,7 +19,7 @@ document.querySelector('#form-conversao').addEventListener('submit', function(ev
     .then(response => response.json())
     .then(data => {
       document.querySelector('#conversao').textContent = data.valor;
-      atualizarConteudo();
+      realizarConversao();
     })
     .catch(error => console.error(error));
 });
