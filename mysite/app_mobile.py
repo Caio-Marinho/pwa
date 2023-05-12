@@ -67,7 +67,7 @@ def contacao():
             elif contacao > contacao2:
                 conversao = float(contacao)*float(valor)
             cache['conversao'] = conversao # Armazena o valor da conversão em cache
-            return jsonify('valor':str(conversao)) # Retorna o valor da conversão por meio de uma requisição AJAX
+            return jsonify('valor': str(conversao)) # Retorna o valor da conversão por meio de uma requisição AJAX
         except:
             return redirect(url_for('index'))
 
