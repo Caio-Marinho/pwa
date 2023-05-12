@@ -37,7 +37,7 @@ function realizarConversao() {
 function atualizarValorEmCache() {
   axios.get('/conversao_valor')
     .then(function(response) {
-      console.log('oi'+response.data.valor);
+      console.log(response.data.valor);
     })
     .catch(function(error) {
       console.log('Erro na requisição. Status do erro: ' + error.response.status);
