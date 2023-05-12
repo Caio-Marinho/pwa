@@ -7,6 +7,7 @@ const urlsToCache = [
   '/static/css/style.css',
   '/static/bootstrap/css/bootstrap-grid.min.css',
   '/static/bootstrap/js/bootstrap.bundle.min.js',
+  'atualiza.js',
 ];
 
 self.addEventListener('install', event => {
