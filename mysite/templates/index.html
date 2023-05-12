@@ -69,5 +69,32 @@
     </div>
         </div>
     <script type="text/javascript" src="../static/js/pwa.js"></script>
+    <script>
+        $(function() {
+  $('#btn-converter').click(function(e) { // assume que o botão para iniciar a conversão tem o ID "btn-converter"
+    e.preventDefault(); // previne o comportamento padrão do formulário
+
+    var valor = $('#valor').val();
+    var moeda1 = $('#moeda1').val();
+    var moeda2 = $('#moeda2').val();
+
+    $.ajax({
+      url: '/conversao',
+      type: 'POST',
+      data: {
+        'valor': valor,
+        'moeda': moeda1,
+        'moeda2': moeda2
+      },
+      success: function(data) {
+        $('#conversao').text(data);
+      },
+      error: function() {
+        alert('Erro ao converter');
+      }
+    });
+  });
+});
+    </script>
     </body>
 </html>
