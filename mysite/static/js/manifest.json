@@ -7,7 +7,7 @@
   "orientation": "any",
   "scope": "https://kaigabriel12.pythonanywhere.com/",
   "short_name": "Conversor",
-  "start_url": "mysite/templates/index.html",
+  "start_url": "https://kaigabriel12.pythonanywhere.com/",
   "theme_color": "#d01e1e",
   "categories": [],
   "screenshots": [],
