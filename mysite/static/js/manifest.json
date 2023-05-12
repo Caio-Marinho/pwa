@@ -5,7 +5,7 @@
   "display": "standalone",
   "name": "Conversor",
   "orientation": "any",
-  "scope": "mysite/templates/index.html",
+  "scope": "https://kaigabriel12.pythonanywhere.com/",
   "short_name": "Conversor",
   "start_url": "mysite/templates/index.html",
   "theme_color": "#d01e1e",
