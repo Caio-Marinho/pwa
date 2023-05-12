@@ -78,7 +78,6 @@
             type: 'POST',
             data: $('form').serialize(),
             success: function(response) {
-                console.log(response.valor);
                 $('#conversao').text(response.valor);
             },
             error: function(error) {
