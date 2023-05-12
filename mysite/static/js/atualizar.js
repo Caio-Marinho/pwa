@@ -19,7 +19,8 @@ atualizarConteudo();
 
 function realizarConversao() {
   var form = document.querySelector('#form-conversao');
-  form.addEventListener('submit', function(event) {
+  var btnConverter = document.querySelector('#btn-converter');
+  btnConverter.addEventListener('click', function(event) {
     event.preventDefault();
     var data = new FormData(form);
     axios.post('/conversao', data)
@@ -47,3 +48,4 @@ function atualizarValorEmCache() {
 document.addEventListener('DOMContentLoaded', function() {
   realizarConversao();
 });
+

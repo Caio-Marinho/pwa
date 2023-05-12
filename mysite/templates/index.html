@@ -16,7 +16,7 @@
         <link rel="shortcut icon" href="../static/js/image/ios/16.png">
     <link rel="apple-touch-icon" href="../static/js/image/ios/180.png">
     </head>
-    <body onload="atualizarConteudo();registerServiceWorker()">
+    <body onload="atualizarConteudo();registerServiceWorker();atualizarValorEmCache()">
         <div class="navbar">
             <div class="blinking">Atividade Mobile</div>
         </div>
@@ -24,7 +24,7 @@
         <div class="conversão">
             <div>No converso é a moeda que deseja converter.<br></div>
             <div>No convertida é a moeda que deseja para ao qual seja convertida.<br></div>
-            <form id="form-conversao" onsubmit="realizarConversao();atualizarValorEmCache()">
+            <form id="form-conversao" method="post">
                 <div class="input">
                 <input  class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
                 </div>
@@ -40,7 +40,7 @@
                         <option value='{{moedas[moeda]}}'>{{moeda}}</option>
                     {% endfor %}
                 </select>
-                <button type="submit" class="button">consultar</button>
+                <button id="btn-converter" onclick="realizarConversao()" type="submit" class="button">consultar</button>
             </form>
                 <span id="conversao" class="output">O valor é:</span>
         </div>

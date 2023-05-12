@@ -44,13 +44,6 @@ def index():
         return render_template("index.html",  moedas=nome)
     return render_template("index.html", conversao=message, moedas=nome)
 
-@app.route('/conversao_valor', methods=['GET'])
-def conversao_valor():
-    valor = cache.get('conversao')
-    if valor is not None:
-        return jsonify({'valor': valor})
-    return jsonify({'valor': ''})
-
 @app.route('/conversao', methods=['GET', 'POST'])
 def contacao():
     global conversao
