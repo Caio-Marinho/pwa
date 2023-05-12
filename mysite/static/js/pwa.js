@@ -1,6 +1,6 @@
 function registerServiceWorker() {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/static/js/service-worker.js')
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('service-worker.js')
         .then(registration => {
           console.log('Service Worker registrado com sucesso:', registration.scope);
         })
