@@ -27,9 +27,6 @@
                 <div class="input">
                 <input  class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
                 </div>
-                <div class="output">
-                    O valor é:<span id="conversao"></span>
-                </div>
                 <select class="form-select" name="moeda">
                     <option>CONVERSOR</option>
                     {% for moeda in moedas %}
@@ -44,6 +41,9 @@
                 </select>
                 <button type="submit" class="button">consultar</button>
             </form>
+            <div class="output">
+                O valor é:<span id="conversao"></span>
+            </div>
             <div class="output">
                 O valor é:<span id="conversao"></span>
             </div>
