@@ -75,7 +75,7 @@
         event.preventDefault();
         $.ajax({
             url: '/conversao',
-            type: 'POST',
+            type: 'GET',
             data: $('form').serialize(),
             success: function(response) {
                 console.log(response.valor);
