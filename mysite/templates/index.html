@@ -12,7 +12,6 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script type="text/javascript" src="../static/js/atualizar.js"></script>
-        <script type="text/javascript" src="../static/js/exbir.js"></script>
         <link rel="manifest" href="../static/js/manifest.json">
         <link rel="shortcut icon" href="../static/js/image/ios/16.png">
     <link rel="apple-touch-icon" href="../static/js/image/ios/180.png">
@@ -25,7 +24,7 @@
         <div class="conversão">
             <div>No converso é a moeda que deseja converter.<br></div>
             <div>No convertida é a moeda que deseja para ao qual seja convertida.<br></div>
-            <form id="form-conversao">
+            <form id="form-conversao" method="post" action="/conversao">
                 <div class="input">
                 <input  class="input" type="text" name="valor" autocomplete="off"  placeholder="valor a ser convertido">
                 </div>
@@ -41,7 +40,7 @@
                         <option value='{{moedas[moeda]}}'>{{moeda}}</option>
                     {% endfor %}
                 </select>
-                <button id="btn-converter" onclick="realizarConversao()" type="submit" class="button">consultar</button>
+                <button id="btn-converter" type="submit" class="button">consultar</button>
             </form>
                 <span id="conversao" class="output">O valor é:</span>
         </div>
