@@ -41,8 +41,8 @@ def index():
     session['mensagem'] = mensagem
     message = session.pop('mensagem', None)
     if mensagem is None:
-        return render_template("index.html",  moedas=nome),200
-    return render_template("index.html", conversao=message, moedas=nome) ,200
+        return render_template("index.html",  moedas=nome)
+    return render_template("index.html", conversao=message, moedas=nome)
 
 @app.route('/conversao', methods=['GET', 'POST'])
 def contacao():
@@ -68,9 +68,9 @@ def contacao():
                 conversao = float(contacao)*float(valor)
             cache['conversao'] = conversao # Armazena o valor da conversão em cache
             flash(conversao)
-            return redirect(url_for('index')),200# Retorna o valor da conversão por meio de uma requisição AJAX
+            return redirect(url_for('index'))# Retorna o valor da conversão por meio de uma requisição AJAX
         except:
-            return redirect(url_for('index')),200
+            return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
