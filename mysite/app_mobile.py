@@ -42,7 +42,7 @@ def index():
     message = session.pop('mensagem', None)
     if mensagem is None:
         return render_template("index.html",  moedas=nome)
-    return render_template("index.html", conversao=message, moedas=nome) 200, {'Service-Worker-Allowed': '/'}
+    return render_template("index.html", conversao=message, moedas=nome) ,200, {'Service-Worker-Allowed': '/'}
 
 @app.route('/conversao', methods=['GET', 'POST'])
 def contacao():
