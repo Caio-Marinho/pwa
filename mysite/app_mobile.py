@@ -45,9 +45,11 @@ def index():
     return render_template("index.html", conversao=message, moedas=nome)
 
 @app.route('/conversao', methods=['GET', 'POST'])
-def contacao():
+def conversao():
     global conversao
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return jsonify({'conversao': cache.get('conversao')})
+    elif request.method == 'POST':
         try:
             valor = request.form['valor']
             moeda = request.form['moeda']
@@ -68,9 +70,25 @@ def contacao():
                 conversao = float(contacao)*float(valor)
             cache['conversao'] = conversao # Armazena o valor da conversão em cache
             flash(conversao)
-            return redirect(url_for('index'))# Retorna o valor da conversão por meio de uma requisição AJAX
+            return jsonify({'conversao': conversao})# Retorna o valor da conversão por meio de uma requisição AJAX
         except:
-            return redirect(url_for('index'))
+            return jsonify({'error': 'Erro ao realizar a conversão'})
+        
+@app.route('/conversao/<moeda>', methods=['PUT'])
+def adicionar_moeda(moeda):
+    cache['moedas'] = None # Limpa o cache de moedas para forçar a recarga
+    return jsonify({'success': f'Moeda {moeda} adicionada com sucesso!'})
+
+@app.route('/conversao/<moeda>', methods=['DELETE'])
+def remover_moeda(moeda):
+    nome = cache.get('moedas')
+    if nome is not None and moeda in nome.values():
+        nome = {k:v for k,v in nome.items() if v != moeda} # Remove a moeda do dicionário
+        cache['moedas'] = nome # Armazena o novo dicionário no cache
+        return jsonify({'success': f'Moeda {moeda} removida com sucesso!'})
+    else:
+        return jsonify({'error': f'A moeda {moeda} não foi encontrada.'})
+
 
 
 if __name__ == '__main__':
